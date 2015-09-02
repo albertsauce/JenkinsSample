@@ -1,7 +1,7 @@
 #!/usr/bin/python
 # -*- coding: UTF-8 -*-
 
-"""This test assumes SAUCE_USER_NAME and SAUCE_API_KEY are environment variables
+"""This test assumes SAUCE_USERNAME and SAUCE_ACCESS_KEY are environment variables
 set to your Sauce Labs username and access key."""
 
 #importing the unittest python module that provides classes for test automation. 
@@ -22,17 +22,17 @@ import json
 import new
 
 #Retreiving enviroment variables
-SAUCE_USER_NAME = os.environ.get('SAUCE_USER_NAME')
-SAUCE_API_KEY = os.environ.get('SAUCE_API_KEY')
+SAUCE_USERNAME = os.environ.get('SAUCE_USERNAME')
+SAUCE_ACCESS_KEY = os.environ.get('SAUCE_ACCESS_KEY')
 
 #Credentials for SauceClient
-test_result = sauceclient.SauceClient(SAUCE_USER_NAME, SAUCE_API_KEY)
+test_result = sauceclient.SauceClient(SAUCE_USERNAME, SAUCE_ACCESS_KEY)
 
 class AppiumMobileWebAppTest(unittest.TestCase):
     def setUp(self):
 
         self.desired_capabilities = {}
-        self.desired_capabilities['name'] = 'Chrome 44 Test'
+        self.desired_capabilities['name'] = 'Chrome Dev Test'
         # self.desired_capabilities['platformName'] = 'Android'
         self.desired_capabilities['platform'] = 'Windows 8.1'
         self.desired_capabilities['browserName'] = 'chrome'
@@ -40,13 +40,13 @@ class AppiumMobileWebAppTest(unittest.TestCase):
         # # self.desired_capabilities['appiumVersion'] = '1.3.7'
         # # self.desired_capabilities['automationName'] = "Selendroid"
         # self.desired_capabilities['deviceOrientation'] = 'portrait'
-        self.desired_capabilities['version'] = "44"
+        self.desired_capabilities['version'] = "43"
         # self.desired_capabilities['chromedriverVersion'] = "2.16"
         # self.desired_capabilities['screenResolution'] = "1600x1200"
         # self.desired_capabilities['app'] = "http://screendymac.cloudapp.net/com.screendy.previewer[1].apk"
         # self.desired_capabilities['app'] = 'sauce-storage:jhon2_file.apk'
 
-        self.driver = webdriver.Remote(command_executor = ('http://' + SAUCE_USER_NAME + ':' + SAUCE_API_KEY + '@ondemand.saucelabs.com:80/wd/hub'), desired_capabilities = self.desired_capabilities) 
+        self.driver = webdriver.Remote(command_executor = ('http://' + SAUCE_USERNAME + ':' + SAUCE_ACCESS_KEY + '@ondemand.saucelabs.com:80/wd/hub'), desired_capabilities = self.desired_capabilities) 
         # self.driver.implicitly_wait(30)    
 
     def test_https(self):
