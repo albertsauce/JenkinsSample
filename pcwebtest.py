@@ -32,7 +32,7 @@ class AppiumMobileWebAppTest(unittest.TestCase):
     def setUp(self):
 
         self.desired_capabilities = {}
-        self.desired_capabilities['name'] = 'Chrome Dev Test'
+        self.desired_capabilities['name'] = 'Chrome 44 Test'
         # self.desired_capabilities['platformName'] = 'Android'
         self.desired_capabilities['platform'] = 'Windows 8.1'
         self.desired_capabilities['browserName'] = 'chrome'
@@ -40,7 +40,7 @@ class AppiumMobileWebAppTest(unittest.TestCase):
         # # self.desired_capabilities['appiumVersion'] = '1.3.7'
         # # self.desired_capabilities['automationName'] = "Selendroid"
         # self.desired_capabilities['deviceOrientation'] = 'portrait'
-        self.desired_capabilities['version'] = "dev"
+        self.desired_capabilities['version'] = "44"
         # self.desired_capabilities['chromedriverVersion'] = "2.16"
         # self.desired_capabilities['screenResolution'] = "1600x1200"
         # self.desired_capabilities['app'] = "http://screendymac.cloudapp.net/com.screendy.previewer[1].apk"
